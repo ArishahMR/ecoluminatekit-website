@@ -1,0 +1,592 @@
+/* Reset and Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: transparent;
+    color: #fff6d8;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top, rgba(7, 81, 101, 0.7), rgba(0, 0, 0, 0.7)), url('BGImageForWeb.png') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff6d8;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Logo styles */
+.logo {
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #ffdc4e;
+    border-radius: 8px;
+    font-size: 36px;
+    color: #ffdc4e;
+    font-weight: bold; /* Make the logo font bold */
+}
+
+/* Menu styles */
+.menu {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between; /* Ensure space between items */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu ul li {
+    margin: 0 10px; /* Increase spacing between items */
+    font-size: 14px; /* Slightly smaller font size */
+    text-align: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #ffdc4e;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+
+ul:not(.menu) li::before {
+    content: '✓';
+    color: #ffdc4e;
+}
+
+/* Specific for navbar to remove checkmarks */
+.menu ul li::before {
+    content: none; /* No checkmark for navbar items */
+}
+
+.menu ul li a:hover {
+    color: #fff6d8;
+}
+
+/* Intro Text Styles */
+.intro-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.intro-text h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.intro-text p {
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.intro-text h1 span {
+    color: #ffdc4e;
+    font-weight: bold;
+    font-size: 54px;
+}
+
+.tagline {
+    color: #fff6d8;
+    font-size: 1.5rem;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 1rem;
+    padding-top: 5rem;
+    margin: 20px 0;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    line-height: 1.5;
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.section2 {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.7)), url('ELBackgroundSolidBlue.png') center/cover no-repeat;
+    width: 150vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Updated Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section2 {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url('BGImage2.png') center/cover no-repeat;
+    width: 150vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.content-block {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 40px 0 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #fff6d8;
+    width: 100%;
+    max-width: 800px;
+    backdrop-filter: blur(10px); 
+    position: relative;
+    z-index: 2;
+}
+
+
+.section2 .container{
+    width: clamp(300px, 50vw, 800px);
+}
+
+.section2 .content-block {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+/* General Text Styling */
+h2 {
+    font-size: 24px;
+    color: #ffdc4e;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li::before {
+    content: '✓ ';
+    color: #ffdc4e;
+}
+
+
+/* BEGIN THE HORROR OF CAROUSELLLL */
+/* Carousel Section Styles */
+
+/*.carousel-section {
+    padding: 60px 20px;
+    background: inherit; 
+    text-align: center;
+}
+
+.carousel {
+    width: 40%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 100px; 
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 300%; 
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+}
+
+.carousel-image {
+    width: 33.33%; 
+    object-fit: contain; 
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 40px; 
+    height: 40px; 
+    cursor: pointer;
+    z-index: 100;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.carousel-btn.prev,
+.carousel-btn.next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    padding-top: 15rem;
+    padding-bottom: 10rem;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.carousel-btn.prev {
+    left: 0px;
+    border-radius: 3px 0 0 3px;
+}
+
+.carousel-btn.next {
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+}
+
+.carousel-btn.prev:hover,
+.carousel-btn.next:hover{
+    background-color: rgba(151, 171, 174, 0.8);
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden; 
+}
+
+*/
+
+
+/* Carousel Buttons */
+
+.carousel-section {
+    padding: 60px 20px;
+    background: inherit; 
+    text-align: center;
+}
+
+.carousel {
+    width: 40%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 100px; 
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 300%; 
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+}
+
+.carousel-image {
+    width: 33.33%; 
+    object-fit: contain; 
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Button background */
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.carousel-btn.prev {
+    left: 10px; /* Positioning on the left */
+}
+
+.carousel-btn.next {
+    right: 10px; /* Positioning on the right */
+}
+
+.carousel-btn i {
+    font-size: 24px; /* Size of the Ionicons */
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.carousel-btn:active {
+    transform: scale(0.95); /* Button press effect */
+}
+
+/* Make sure the carousel itself has overflow hidden to contain the buttons */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+#impact-heading h2 {
+    font-size: 24px;
+    color: #ffdc4e;
+    margin-bottom: 20px; /* Adjusts the space between the heading and the carousel */
+    text-align: center; /* Centers the heading */
+}
+
+/* Benefits and SDG Container */
+#benefits-heading {
+    display: flex;
+    justify-content: space-around; /* Adjusts space between the blocks */
+    align-items: flex-start;
+    gap: 3rem;
+    width: clamp(400px, 50vw, 800px);
+}
+
+/* Individual Blocks */
+#benefits, #sdg {
+    width: 70%; /* Reduced width to create more space between the blocks */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff6d8;
+}
+
+/* Adjusting the headings to match the rest of your site */
+#benefits-heading h2 {
+    font-size: 24px;
+    color: #ffdc4e;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#benefits ul, #sdg ul {
+    margin-top: 20px; /* Adds space between the header and the list */
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li::before {
+    content: '✓ ';
+    color: #ffdc4e;
+}
+
+#sdg h2{
+    font-size: 24px;
+    color: #ffdc4e;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#sdg{
+    text-align: left;
+}
+
+
+/* RESPONSIVE PAGE BABYYYY */
+
+@media (min-width: 769px) {
+    .navbar {
+        flex-direction: row;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .menu {
+        flex: 2;
+        justify-content: flex-end;
+    }
+
+    .content-block {
+        width: 100%;
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .menu ul {
+        flex-direction: row;
+            justify-content: center;
+    }
+    
+    .menu ul li {
+        font-size: 13px; /* Further reduce font size for smaller screens */
+        margin: 5px;
+    }
+    
+    .menu ul li a {
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+
+    .intro-text h1 {
+        font-size: 28px;
+        margin: 15px 0 10px 0;
+        line-height: 1.2;
+    }
+
+    .intro-text p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .header {
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .section {
+        padding: 20px 10px;
+    }
+
+    .carousel {
+        width: 90%;
+        margin: 20px auto;
+        margin-bottom: -240px;
+    }
+
+    .carousel-container {
+        width: 300%;
+    }
+
+    .carousel-image {
+        padding-top: 15rem;
+        width: 33.33%;
+    }
+
+    .carousel-btn {
+        font-size: 1.5rem;
+        top: 50%; /* Adjust to ensure the icons stay vertically centered */
+        transform: translateY(-50%);
+    }
+
+    .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-btn.next {
+        right: 10px;
+    }
+
+    #benefits-heading, 
+    #sdg {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px; /* Consistent padding for both */
+        box-sizing: border-box;
+    }
+
+
+    #benefits-heading {
+        width: 100%;
+        max-width: 500px; /* Set a max width to prevent it from stretching too much */
+        padding: 10px;
+        margin: auto; /* Center the container */
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+
+    #benefits-heading h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    #benefits-heading li {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-left: 5px;
+        word-wrap: break-word;
+    }
+    
+
+    #benefits-heading {
+        display: flex;
+        flex-direction: column; /* Stack heading and list vertically */
+        align-items: flex-start; /* Align text to the start (left) */
+        margin-top: 10px;
+    }
+
+}
+
+
